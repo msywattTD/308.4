@@ -42,7 +42,7 @@ let str = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Bl
 //   }
 // }
 
-// PART 2
+//-------------------------------PART 2
 // let myArr = str.split('\n');
 
 // let columns = 1;
@@ -62,7 +62,7 @@ let str = `ID,Name,Occupation,Age\n42,Bruce,Knight,41\n57,Bob,Fry Cook,19\n63,Bl
 // console.log(doubleArr)
 
 
-//PART 3
+//-------------------------------PART 3
 let myArr = str.split('\n');
 
 let columns = 1;
@@ -81,7 +81,7 @@ for (element in myArr) {
 }
 
 
-console.log(doubleArr[1][0])
+// console.log(doubleArr[1][0])
 
 let persons = []
 
@@ -93,11 +93,52 @@ for (i = 1; i < doubleArr.length; i++){
     persons.push(person)
 }
 
-console.log(persons)
+// console.log(persons)
+
+//-------------------------------PART 4
+persons.pop()
+
+// console.log(persons)
+
+persons.push(
+    {
+        id: "7",
+        name: "Bilbo",
+        occupation: "None",
+        age: "111"
+    }
+)
+
+// console.log(persons)
+
+let runningAge = 0;
+let ageSum = 0;
+for (let i=0; i<persons.length;i++) {
+    runningAge += parseInt(persons[i].age);
+    ageSum = runningAge/persons.length
+
+}
+
+//console.log(ageSum)
+
+//-------------------------------PART 5
+
+let tempArr = [];
+for (let i = 0; i<persons.length; i++){
+        tempArr.push(persons[i].id)
+        tempArr.push(persons[i].name)
+        tempArr.push(persons[i].occupation)
+        tempArr.push(persons[i].age)
+        tempArr.push(`\n`)
+}
+
+//this is scuffed and has extra commas
+let newCSV = tempArr.join(',')
+console.log(newCSV)
 
 
 
-//pART 3 ALSO FUCNTIONING BUT WEIRD APPARENTLY
+//pART 3 ALSO FUCNTIONING BUT WEIRD APPARENTLY ((IGNORE))
 
 // let myArr = str.split('\n');
 // let title = str.slice(0, str.indexOf('\n'));
